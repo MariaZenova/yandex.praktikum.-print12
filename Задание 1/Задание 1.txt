@@ -1,0 +1,9 @@
+scooter_rent=# SELECT c.login, COUNT(o."inDelivery") FROM public."Couriers" AS C
+INNER JOIN public."Orders" AS o
+ON o."courierId" = c.id WHERE o."inDelivery" = true GROUP BY c.login;
+ login | count
+-------+-------
+ Kira  |     2
+ Sveta |     2
+(2 rows)
+
